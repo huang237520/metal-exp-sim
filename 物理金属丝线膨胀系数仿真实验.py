@@ -15,7 +15,7 @@ st.set_page_config(page_title="金属丝线膨胀系数仿真实验", layout="wi
 
 def init_global_state():
     if "theme" not in st.session_state:
-        st.session_state.theme = "暗色"
+        st.session_state.theme = "亮色"
     if "assembly_done" not in st.session_state:
         st.session_state.assembly_done = False
     if "zero_offset" not in st.session_state:
@@ -198,7 +198,7 @@ def main():
     MATERIAL_ALPHA = get_full_materials()
     with st.sidebar:
         st.title("🧪 实验控制")
-        theme = st.radio("主题", ["暗色", "亮色"], index=0 if st.session_state.theme=="暗色" else 1)
+        theme = st.radio("主题", ["暗色", "亮色"], index=1)
         if theme != st.session_state.theme:
             st.session_state.theme = theme
             st.rerun()
